@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordergenerator
+spec:
+  selector:
+    matchLabels:
+      app: ordergenerator
+  template:
+    metadata:
+      labels:
+        app: ordergenerator
+    spec:
+      containers:
+      - name: ordergenerator
+        image: dquintana29/ordergenerator:latest
+        ports:
+        - containerPort: 8080
